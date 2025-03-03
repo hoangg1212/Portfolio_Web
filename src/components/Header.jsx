@@ -24,13 +24,13 @@ const Header = () => {
   };
 
   return (
-    <nav className='w-full fixed top-0 left-0 right-0 z-50 bg-white shadow-md px-8 md:px-16 lg:px-24'>
-      <div className='py-2 flex justify-between items-center'>
+    <nav className='w-full fixed top-0 left-0 right-0 z-50 bg-white shadow-md px-4 md:px-16'>
+      <div className='py-2 flex justify-between items-center max-w-screen-xl mx-auto md:max-w-none md:mx-0'>
         {/* Bên trái (Avatar + Họ tên) */}
-        <div className='flex space-x-2'>
-          <img src={avatar} alt="avatar" className='w-12 h-12 rounded-full' />
-          <h1 className='font-semibold text-xl cursor-pointer'>
-            Le Huy <span className='text-green-500 text-2xl'> Hoang </span>
+        <div className='flex space-x-2 items-center'>
+          <img src={avatar} alt="avatar" className='w-10 h-10 sm:w-12 sm:h-12 rounded-full' />
+          <h1 className='hidden sm:block font-semibold text-lg sm:text-xl cursor-pointer'>
+            Le Huy <span className='text-green-500 text-xl sm:text-2xl'> Hoang </span>
             <p className='text-sm'>Front-End Developer</p>
           </h1>
         </div>
@@ -84,8 +84,8 @@ const Header = () => {
 
       {/* Mobile Menu (Hiển thị menu khi mở) */}
       {menu && (
-        <div className='bg-white md:hidden'>
-          <ul className='flex flex-col h-screen items-center justify-center space-y-3 text-xl'>
+        <div className='bg-white md:hidden fixed top-0 left-0 right-0 bottom-0 z-50'>
+          <ul className='flex flex-col items-center justify-center h-full space-y-3 text-xl'>
             {navItems.map(e => (
               <li
                 key={e.id}
